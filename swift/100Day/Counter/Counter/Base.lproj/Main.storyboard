@@ -38,20 +38,31 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYS-KS-xVq">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Tap"/>
+                                <state key="normal" title="Tap or Hold"/>
                                 <connections>
-                                    <action selector="tapClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bug-FU-jei"/>
+                                    <action selector="tapOrHoldClick:" destination="BYZ-38-t0r" eventType="touchDragInside" id="Cey-g4-bJY"/>
+                                    <action selector="tapOrHoldClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cxu-0H-Mfq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHY-5E-Us6">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="LongPress"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cJV-uW-hkC" appends="YES" id="o49-Vx-YEH"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lHY-5E-Us6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Pc-Ek-jBJ"/>
                             <constraint firstItem="fqK-x6-X5r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="BIg-lL-QQ6"/>
                             <constraint firstItem="cYS-KS-xVq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DQX-Uv-JyH"/>
                             <constraint firstItem="oBE-8H-sR6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EJp-G4-uRT"/>
+                            <constraint firstItem="lHY-5E-Us6" firstAttribute="top" secondItem="cYS-KS-xVq" secondAttribute="bottom" id="Otf-Ws-Uhg"/>
                             <constraint firstAttribute="trailing" secondItem="fqK-x6-X5r" secondAttribute="trailing" id="Ydm-0W-8eG"/>
                             <constraint firstItem="oBE-8H-sR6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cAP-jG-RwG"/>
-                            <constraint firstItem="cYS-KS-xVq" firstAttribute="top" secondItem="oBE-8H-sR6" secondAttribute="bottom" constant="50" id="kd2-hz-gcG"/>
+                            <constraint firstItem="cYS-KS-xVq" firstAttribute="top" secondItem="oBE-8H-sR6" secondAttribute="bottom" constant="30" id="kd2-hz-gcG"/>
                             <constraint firstItem="fqK-x6-X5r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qNT-bf-3gT"/>
                             <constraint firstItem="oBE-8H-sR6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uP0-QX-VJX"/>
                         </constraints>
@@ -59,10 +70,13 @@
                             <mask key="subviews">
                                 <exclude reference="oBE-8H-sR6"/>
                                 <exclude reference="cYS-KS-xVq"/>
+                                <exclude reference="lHY-5E-Us6"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="DQX-Uv-JyH"/>
                                 <exclude reference="kd2-hz-gcG"/>
+                                <exclude reference="5Pc-Ek-jBJ"/>
+                                <exclude reference="Otf-Ws-Uhg"/>
                                 <exclude reference="EJp-G4-uRT"/>
                                 <exclude reference="cAP-jG-RwG"/>
                                 <exclude reference="uP0-QX-VJX"/>
@@ -75,10 +89,13 @@
                             <mask key="subviews">
                                 <include reference="oBE-8H-sR6"/>
                                 <include reference="cYS-KS-xVq"/>
+                                <include reference="lHY-5E-Us6"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="DQX-Uv-JyH"/>
                                 <include reference="kd2-hz-gcG"/>
+                                <include reference="5Pc-Ek-jBJ"/>
+                                <include reference="Otf-Ws-Uhg"/>
                                 <include reference="EJp-G4-uRT"/>
                                 <include reference="cAP-jG-RwG"/>
                                 <include reference="uP0-QX-VJX"/>
@@ -93,6 +110,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="cJV-uW-hkC">
+                    <connections>
+                        <action selector="tapLongClick:" destination="BYZ-38-t0r" id="yRt-BA-vrO"/>
+                        <outlet property="delegate" destination="8bC-Xf-vdC" id="8NP-ms-Eog"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
         </scene>
     </scenes>

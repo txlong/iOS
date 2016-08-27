@@ -17,9 +17,15 @@ class ViewController: UIViewController {
         number = 0;
         setLabel()
     }
-    @IBAction func tapClick(sender: AnyObject) {
+    @IBAction func tapOrHoldClick(sender: AnyObject) {
         number += 1
         setLabel()
+    }
+    @IBAction func tapLongClick(sender: AnyObject) {
+        if sender.state == .Began {
+            number += 1
+            setLabel()
+        }
     }
     
     func setLabel() {
