@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Counter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqK-x6-X5r">
+                                <rect key="frame" x="20" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Counter" id="WGD-xk-glI">
+                                        <barButtonItem key="leftBarButtonItem" title="Reset" id="lR5-oq-aSw">
+                                            <connections>
+                                                <action selector="resetClick:" destination="BYZ-38-t0r" id="umK-o9-lzs"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBE-8H-sR6">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" red="0.98431372549999996" green="0.6705882353" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYS-KS-xVq">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Tap"/>
+                                <connections>
+                                    <action selector="tapClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bug-FU-jei"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fqK-x6-X5r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="BIg-lL-QQ6"/>
+                            <constraint firstItem="cYS-KS-xVq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DQX-Uv-JyH"/>
+                            <constraint firstItem="oBE-8H-sR6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EJp-G4-uRT"/>
+                            <constraint firstAttribute="trailing" secondItem="fqK-x6-X5r" secondAttribute="trailing" id="Ydm-0W-8eG"/>
+                            <constraint firstItem="oBE-8H-sR6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cAP-jG-RwG"/>
+                            <constraint firstItem="cYS-KS-xVq" firstAttribute="top" secondItem="oBE-8H-sR6" secondAttribute="bottom" constant="50" id="kd2-hz-gcG"/>
+                            <constraint firstItem="fqK-x6-X5r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qNT-bf-3gT"/>
+                            <constraint firstItem="oBE-8H-sR6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uP0-QX-VJX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="oBE-8H-sR6"/>
+                                <exclude reference="cYS-KS-xVq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="DQX-Uv-JyH"/>
+                                <exclude reference="kd2-hz-gcG"/>
+                                <exclude reference="EJp-G4-uRT"/>
+                                <exclude reference="cAP-jG-RwG"/>
+                                <exclude reference="uP0-QX-VJX"/>
+                                <exclude reference="BIg-lL-QQ6"/>
+                                <exclude reference="Ydm-0W-8eG"/>
+                                <exclude reference="qNT-bf-3gT"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="oBE-8H-sR6"/>
+                                <include reference="cYS-KS-xVq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="DQX-Uv-JyH"/>
+                                <include reference="kd2-hz-gcG"/>
+                                <include reference="EJp-G4-uRT"/>
+                                <include reference="cAP-jG-RwG"/>
+                                <include reference="uP0-QX-VJX"/>
+                                <include reference="BIg-lL-QQ6"/>
+                                <include reference="Ydm-0W-8eG"/>
+                                <include reference="qNT-bf-3gT"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="numberLabel" destination="oBE-8H-sR6" id="bft-gd-RXm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
